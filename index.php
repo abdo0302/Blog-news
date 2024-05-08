@@ -15,23 +15,35 @@
     <!--============[[header start]]=================-->
     <header>
         <div class="contenar_nav_bar">
-            <a href="#" class="logo">Blog<span>News</span></a>
+            <a href="#" class="logo home">Blog<span>News</span></a>
             <nav>
                 <ul>
-                    <li><a class="acteve" href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Catégories</a></li>
-                    <li><a href="#">Authors</a></li>
+                    <li><a class="acteve home" href="#">Home</a></li>
+                    <li><a href="#" class="button_blog">Blog</a></li>
+                    <li>
+                        <a href="#" class="button_categories">Catégories</a>
+                        <!--nav categories-->
+                        <div class="nav-categories">
+                                <ul>
+                                    <li><a>Sport</a></li>
+                                    <li><a>Science & Tech</a></li>
+                                    <li><a>Business</a></li>
+                                </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" class="button_Authors">Authors</a></li>
                     <li><a href="#"><i class="fa-solid fa-right-to-bracket"></i> SIGN UP</a></li>
                     <li><a href="#"><i class="fa-solid fa-circle-user"></i> SIGN IN</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+          
     <!--header end -->
 
     <!--============[[main start]]=================-->
-    <main>
+    <main class="section_header">
         <!--============{{section de home start}}============-->
         <section id="home">
             <div>
@@ -156,9 +168,27 @@
                 </div>
             </div>
         </section>
-        <!--section de News and events end-->        
+        <!--section de News and events end--> 
     </main>
     <!--main end -->
+
+    <!--============={{section de authors start}}=============-->
+    <section class="section_authors section_header">
+        <div class="contenar_authors">
+            <h1>All Authors</h1>
+        </div>
+            
+    </section>
+        <!--============={{section de authors end}}=============-->
+
+    <!--============={{section de blog start}}=============-->
+    <section class="section_blog section_header">
+        <div class="contenar_blog">
+            <h1>Blog</h1>
+        </div>
+            
+    </section>
+        <!--============={{section de blog end}}=============-->        
 
     <!--============[[footer start]]=================-->
     <footer>
@@ -171,8 +201,8 @@
             <!--nav footer-->
             <div class="nav_footer">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#" class="home">Home</a></li>
+                    <li><a href="#" class="button_blog">Blog</a></li>
                     <li><a href="#">catégories</a></li>
                     <li><a href="#">Auteurs</a></li>
                 </ul>
@@ -192,6 +222,6 @@
     </footer>
     <!--footer end -->
 
-    <script src="./js/index.js"></script>
+    <script src="./js/home.js"></script>
 </body>
 </html>
