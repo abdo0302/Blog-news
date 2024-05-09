@@ -83,12 +83,12 @@ section {
   padding-left: 200px;
 }
 
-section h3 {
+section h1 {
   color: #000;
   padding: 40px;
 }
 #info_user {
-  height: 400px;
+  height: 430px;
   width: 400px;
   gap: 20px;
   padding: 30px;
@@ -109,4 +109,44 @@ section h3 {
 }
 #span4 {
   margin-right: 65px;
+}
+input{
+  padding: 5px;
+}
+.btn_info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+/* buttun annule*/
+#btn_annule{
+  width: 100%;
+  padding: 10px;
+  background-color:gray ;
+  border: none;
+  border-radius:10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#btn_annule:hover {
+  background-color: #000;
+}
+/* buttun modifier*/
+#btn_modifier{
+  width: 100%;
+  padding: 10px;
+  background-color:gray ;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#btn_modifier:hover {
+  background-color: #000;
 }

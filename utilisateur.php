@@ -30,7 +30,7 @@
                 
                 <div><span id="span3">email</span><input type="text"></div>
                 <div><span id="span4">password</span><input type="text"></div>
-                <div><button type="submit" id="btn_annule" >annule</button><button type="submit" id="btn_modifier">modifier</button></div>
+                <div class ="btn_info"><button type="submit" id="btn_annule" >annule</button><button type="submit" id="btn_modifier">modifier</button></div>
             </div>
         </section>
     </main>
