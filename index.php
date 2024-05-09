@@ -71,7 +71,7 @@
                                         <div class="c"><span>Password</span><span class="Forgot_Password">Forgot Password</span></div>
                                         <input type="text" name="Password_sign_in" id="Password_sign_in">
                                     </div>
-                                    <input type="submit" value="Continue" class="submint_sign_in" name="submint_sign_in" id="submint_sign_in">
+                                    <input type="submit" value="Continue" class="submint_sign_in" name="submint_sign_in" id="submint_sign_in" >
                                 </form>
                             </div>
                         </div>
