@@ -273,3 +273,133 @@ footer{
 .nav-categories:hover{
     display: block;
 }
+/* button_sign_up */
+.button_sign_up{
+    position: relative;
+    
+}
+.contenar_sign_up{
+    background-color: #F7F7F7;
+    position: absolute;
+    right: 60px;
+    top: 59px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+    border: 3px solid rgb(211, 211, 211);
+    border-radius:0 0 10px 10px;
+    border-top:0px ;
+    display: none;
+}
+.tetle_sign_up{
+    margin: 10px 0;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image_profile{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #424242;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+.profile input{
+    width: 94px;
+    font-size: 10px;
+}
+
+.contenat_info_sign_up form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 300px;
+}
+.contenat_info_sign_up form input{
+    padding: 9px;
+    border-radius: 5px;
+    border: 2px solid #b8b8b8;
+}
+#submit{
+    background-color: #222222;
+    color: white;
+    border: none;
+}
+.to_Sign_In{
+    margin-top: 10px;
+    border: 1px solid rgb(201, 201, 200);
+    border-radius: 10px;
+    box-shadow:2px 2px 8px rgb(201, 201, 200);
+    font-size: 15px;
+}
+.to_Sign_In span{
+    font-weight: 700;
+}
+
+/*bar de sign in*/
+.button_sign_in{
+    position: relative;
+}
+.contenat_SIGN_IN{
+    background-color: #F7F7F7;
+    position: absolute;
+    right: 60px;
+    top: 59px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+    border: 3px solid rgb(211, 211, 211);
+    border-radius:0 0 10px 10px;
+    border-top:0px ;
+    display: none;
+
+}
+.contenar_info_sign_in form div{
+    display: flex;
+    flex-direction: column;
+}
+.p_sign_in{
+    width: 250px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #424242;
+}
+.contenar_info_sign_in form{
+    gap: 8px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contenar_info_sign_in form div input{
+    padding: 9px;
+    border-radius: 5px;
+    border: 2px solid #b8b8b8;
+}
+.contenar_info_sign_in form div span{
+    font-size: 15px;
+    color: #181818;
+    font-weight: 600;
+}
+.c{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+}
+.submint_sign_in{
+    padding: 9px;
+    border-radius: 5px;
+    border: 2px solid #b8b8b8;
+}
+.Forgot_Password{
+    font-size: 12px !important;
+    color: #00cc3d !important;
+}

@@ -13,10 +13,10 @@
 </head>
 <body>
     <!--============[[header start]]=================-->
-    <header>
+    <header >
         <div class="contenar_nav_bar">
             <a href="#" class="logo home">Blog<span>News</span></a>
-            <nav>
+            <nav class="nav_bar_heder">
                 <ul>
                     <li><a class="acteve home" href="#">Home</a></li>
                     <li><a href="#" class="button_blog">Blog</a></li>
@@ -32,8 +32,51 @@
                         </div>
                     </li>
                     <li><a href="#" class="button_Authors">Authors</a></li>
-                    <li><a href="#"><i class="fa-solid fa-right-to-bracket"></i> SIGN UP</a></li>
-                    <li><a href="#"><i class="fa-solid fa-circle-user"></i> SIGN IN</a></li>
+                    <li>
+                        <a href="#" class="button_sign_up"><i class="fa-solid fa-right-to-bracket"></i> SIGN UP</a>
+                        <!--bar de sign up  start-->
+                        <div class="contenar_sign_up">
+                            <h2 class="tetle_sign_up">Create a Profile</h2>
+                            <div class="profile">
+                                <img src="./img/profile.png" alt="" class="image_profile"> 
+                                <input type="file">
+                            </div>
+                            <div class="contenat_info_sign_up">
+                                <form action="index.php" method="POST">
+                                    <input type="text" placeholder="First & Last Name" name="name" id="name">
+                                    <input type="text" placeholder="Email Address" name="email" id="email">
+                                    <input type="password" placeholder="Create Password" name="password" id="password">
+                                    <input type="submit" value="Sign Up" name="submit" id="submit">
+                                </form>
+                                
+                            </div>
+                            <a href="#" class="to_Sign_In">Already have an account? <span>Sign In</span></a>
+                            
+                        </div>
+                        <!--bar de sign up  end-->
+                    </li>
+                    <li>
+                        <a href="#" class="button_sign_in"><i class="fa-solid fa-circle-user"></i> SIGN IN</a>
+                        <!--bar de sign in  start-->
+                        <div class="contenat_SIGN_IN">
+                            <h2 class="tetle_sign_in">User Login</h2>
+                            <p class="p_sign_in">Welcome back. Enter your credentials to access your account</p>
+                            <div class="contenar_info_sign_in">
+                                <form action="index.php" method="POST">
+                                     <div>
+                                        <span>Email Address</span>
+                                        <input type="text" name="emile_sign_in" id="emile_sign_in">
+                                    </div>
+                                    <div>
+                                        <div class="c"><span>Password</span><span class="Forgot_Password">Forgot Password</span></div>
+                                        <input type="text" name="Password_sign_in" id="Password_sign_in">
+                                    </div>
+                                    <input type="submit" value="Continue" class="submint_sign_in" name="submint_sign_in" id="submint_sign_in">
+                                </form>
+                            </div>
+                        </div>
+                        <!--bar de sign in  end-->
+                    </li>
                 </ul>
             </nav>
         </div>

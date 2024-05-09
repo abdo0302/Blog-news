@@ -5,13 +5,27 @@ let section_blog=document.querySelector('.section_blog')
 let section_header=document.querySelectorAll('.section_header')
 let main=document.querySelector('main')
 let home=document.querySelectorAll('.home')
+let nav_bar_heder=document.querySelectorAll('.nav_bar_heder ul li a')
 
+// add class acteve
+nav_bar_heder.forEach((e,i)=>{
+    e.addEventListener('click',function(){
+     if(i<7){
+        for(let i=0;i<nav_bar_heder.length;i++){
+            nav_bar_heder[i].classList.remove('acteve')
+        }
+        e.classList+=' acteve'
+     }
+    })
+})
 
+// Move between pages
 button_Authors.onclick=()=>{
     for(let y=0;y<section_header.length;y++){
         section_header[y].style.display='none'
     }
     section_authors.style.display='flex'
+
 }
 home.forEach((e,i) => {
     e.onclick=()=>{
@@ -20,13 +34,7 @@ home.forEach((e,i) => {
     }
 });
 
-// button_blog.forEach((e,i)=>{
-//     e.addEventListener('click',()=>{
-//          
-//         
-//         console.log('dd');
-//     })
-// });
+
 button_blog.forEach((e,i)=>{
     e.addEventListener('click',function(){
         for(let y=0;y<section_header.length;y++){
@@ -36,3 +44,35 @@ button_blog.forEach((e,i)=>{
     })
   
 })
+//Show bar de sign up
+let button_sign_up=document.querySelector('.button_sign_up')
+let contenar_sign_up=document.querySelector('.contenar_sign_up')
+let sign_up_show=false
+console.log(button_sign_up);
+button_sign_up.onclick=()=>{
+    contenat_SIGN_IN.style.display='none'
+  if(sign_up_show==false){
+       sign_up_show=true
+       contenar_sign_up.style.display='flex'
+       
+  }else{
+       sign_up_show=false
+       contenar_sign_up.style.display='none'
+  }
+}
+//Show bar de sign in
+let contenat_SIGN_IN=document.querySelector('.contenat_SIGN_IN')
+let button_sign_in=document.querySelector('.button_sign_in')
+let sign_in_show=false
+
+button_sign_in.onclick=()=>{
+    contenar_sign_up.style.display='none'
+if(sign_in_show==false){
+    sign_in_show=true
+    contenat_SIGN_IN.style.display='flex'
+    
+}else{
+    sign_in_show=false
+    contenat_SIGN_IN.style.display='none'
+}
+}
