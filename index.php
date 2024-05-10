@@ -12,6 +12,23 @@
     <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
+<?php
+    if(isset($_POST['submit'])){
+         $image = $_FILES['image'];
+         $fil_p = "img/" . $image['name'];
+         move_uploaded_file($image["tmp_name"], $fil_p);
+         $photo=$image['name'];
+              } 
+?>
+<?php
+    try {
+        include './php/connect.php';
+        include './php/sign_up.php';
+        include './php/sign_in.php';
+    } catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+    }
+    ?>
     <!--============[[header start]]=================-->
     <header >
         <div class="contenar_nav_bar">
@@ -39,13 +56,13 @@
                             <h2 class="tetle_sign_up">Create a Profile</h2>
                             <div class="profile">
                                 <img src="./img/profile.png" alt="" class="image_profile"> 
-                                <input type="file">
                             </div>
                             <div class="contenat_info_sign_up">
-                                <form action="index.php" method="POST">
+                                <form action="index.php" method="POST"  enctype="multipart/form-data">
                                     <input type="text" placeholder="First & Last Name" name="name" id="name">
                                     <input type="text" placeholder="Email Address" name="email" id="email">
                                     <input type="password" placeholder="Create Password" name="password" id="password">
+                                    <input type="file" name="image">
                                     <input type="submit" value="Sign Up" name="submit" id="submit">
                                 </form>
                                 
@@ -68,8 +85,8 @@
                                         <input type="text" name="emile_sign_in" id="emile_sign_in">
                                     </div>
                                     <div>
-                                        <div class="c"><span>Password</span><span class="Forgot_Password">Forgot Password</span></div>
-                                        <input type="text" name="Password_sign_in" id="Password_sign_in">
+                                        <div class="c"><span>Password</span><span><i class="fa-solid fa-eye fa_eye"></i></span></div>
+                                        <input type="password" name="Password_sign_in" id="Password_sign_in">
                                     </div>
                                     <input type="submit" value="Continue" class="submint_sign_in" name="submint_sign_in" id="submint_sign_in" >
                                 </form>

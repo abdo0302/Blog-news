@@ -48,7 +48,6 @@ button_blog.forEach((e,i)=>{
 let button_sign_up=document.querySelector('.button_sign_up')
 let contenar_sign_up=document.querySelector('.contenar_sign_up')
 let sign_up_show=false
-console.log(button_sign_up);
 button_sign_up.onclick=()=>{
     contenat_SIGN_IN.style.display='none'
   if(sign_up_show==false){
@@ -75,4 +74,22 @@ if(sign_in_show==false){
     sign_in_show=false
     contenat_SIGN_IN.style.display='none'
 }
+}
+//show password 
+let Password_sign_in=document.querySelector('#Password_sign_in')
+let fa_eye=document.querySelector('.fa_eye')
+let is_password_show=false
+fa_eye.onclick=()=>{
+    if(is_password_show==false){
+        is_password_show=true
+        fa_eye.classList.remove('fa-eye')
+        fa_eye.classList+=' fa-eye-slash '
+        Password_sign_in.type='text'
+    }else{
+        is_password_show=false
+        fa_eye.classList.remove('fa-eye-slash')
+        fa_eye.classList+=' fa-eye '
+        Password_sign_in.type='password'
+    }
+    
 }

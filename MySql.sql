@@ -3,6 +3,7 @@ CREATE TABLE utilisateurs (
     nom VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(255) NOT NULL,
+    image VARCHAR(255) ,
     est_admin BOOLEAN DEFAULT FALSE
 );
 

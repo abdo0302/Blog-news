@@ -309,8 +309,7 @@ footer{
     border-radius: 50px;
     margin-bottom: 10px;
 }
-.profile input{
-    width: 94px;
+.profile form input{
     font-size: 10px;
 }
 
@@ -399,7 +398,8 @@ footer{
     border-radius: 5px;
     border: 2px solid #b8b8b8;
 }
-.Forgot_Password{
-    font-size: 12px !important;
-    color: #00cc3d !important;
+.fa_eye{
+    color: #000000;
+    font-size: 20px;
+    margin-right: 10px;
 }
