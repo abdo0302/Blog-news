@@ -18,7 +18,7 @@
                 <span class ="nom">ayoub</span>
                 <span class ="emai">exmple.@gmail.com</span>
             </div>
-            <div class ="button"> <button id="btn_home" type="submit">Home</button> <button id="btn_Logout" type="submit">Logout</button></div>
+            <div class ="button"> <button id="btn_home" type="submit"> <a href="index.php">Home</a></button> <button id="btn_Logout" type="submit">Logout</button></div>
     
         </aside>
         <section >
