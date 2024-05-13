@@ -1,3 +1,8 @@
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +17,6 @@
     <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
-<?php
-    if(isset($_POST['submit'])){
-         $image = $_FILES['image'];
-         $fil_p = "img/" . $image['name'];
-         move_uploaded_file($image["tmp_name"], $fil_p);
-         $photo=$image['name'];
-              } 
-?>
-<?php
-    try {
-        include './php/connect.php';
-        include './php/sign_up.php';
-        include './php/sign_in.php';
-    } catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-    }
-    ?>
     <!--============[[header start]]=================-->
     <header >
         <div class="contenar_nav_bar">
@@ -36,7 +24,6 @@
             <nav class="nav_bar_heder">
                 <ul>
                     <li><a class="acteve home" href="#">Home</a></li>
-                    <li><a href="#" class="button_blog">Blog</a></li>
                     <li>
                         <a href="#" class="button_categories">Catégories</a>
                         <!--nav categories-->
@@ -49,7 +36,7 @@
                         </div>
                     </li>
                     <li><a href="#" class="button_Authors">Authors</a></li>
-                    <li>
+                    <li class="sign">
                         <a href="#" class="button_sign_up"><i class="fa-solid fa-right-to-bracket"></i> SIGN UP</a>
                         <!--bar de sign up  start-->
                         <div class="contenar_sign_up">
@@ -72,7 +59,7 @@
                         </div>
                         <!--bar de sign up  end-->
                     </li>
-                    <li>
+                    <li class="sign">
                         <a href="#" class="button_sign_in"><i class="fa-solid fa-circle-user"></i> SIGN IN</a>
                         <!--bar de sign in  start-->
                         <div class="contenat_SIGN_IN">
@@ -93,6 +80,28 @@
                             </div>
                         </div>
                         <!--bar de sign in  end-->
+                    </li>
+                    <li>
+                        <div class="info_utilisateur">
+                            <h5 class="name"></h5>
+                            <img class="images" src="./img/images.jpg" alt="">
+                        </div> 
+                        <!--nav bar de profile utilisateur-->
+                        <div class="nav_bar_de_profile_utilisateur">
+                            <div class="cotenar_button_close">
+                                <a href="#" class="button_close"><i class="fa-solid fa-x"></i></a>
+                            </div>
+                            <div class="info">
+                                <h5 class="name"></h5>
+                                <img class="images" src="./img/images.jpg" alt="">
+                            </div>
+                            <hr>
+                            <ul class="nav_info">
+                                <li><a href="#" class="home">home</a></li>
+                                <li><a href="./utilisateur.php">my profile</a></li>
+                                <li><form action="index.php" method="POST"><input type="submit" value="log out" name="log_out" class="log_out"></form></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -236,6 +245,9 @@
     <section class="section_authors section_header">
         <div class="contenar_authors">
             <h1>All Authors</h1>
+            <div class="contenar_de_Recent_articles authors">
+                <!-- les card-->
+            </div>
         </div>
             
     </section>
@@ -283,5 +295,73 @@
     <!--footer end -->
 
     <script src="./js/home.js"></script>
+    <?php
+    if(isset($_POST['submit'])){
+         $image = $_FILES['image'];
+         $fil_p = "img/" . $image['name'];
+         move_uploaded_file($image["tmp_name"], $fil_p);
+         $photo=$image['name'];
+              } 
+?>
+<?php
+    try {
+        include './php/connect.php';
+        include './php/sign_up.php';
+        include './php/sign_in.php';
+    } catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+    }
+    ?>
+    <?php
+    include './php/log_out.php';
+    
+    if(isset($_SESSION['nom'])&& !isset($_POST['log_out'])){
+        if(!class_exists('utilisateur')){
+            include "./php/src/utilisateur.class.php";
+            $utilisateur1=new utilisateur($_SESSION['nom'],$_SESSION['email'],$_SESSION['mot_de_passe'],$_SESSION['est_admin'],$_SESSION['image']);
+        } 
+       $utilisateur1->sign_in();
+    }
+    ?>
+   <?php
+    $selects = $conn->query("SELECT * FROM utilisateurs WHERE est_admin=1");
+    $results = $selects->fetchAll(PDO::FETCH_ASSOC);
+    if (count($results) > 0) {
+        $image_authors='';
+        $nom_authors='';
+        $email_authors='';
+        foreach ($results as $row) {
+            foreach($row as $a => $b){
+                if($a == 'image'){
+                    $image_authors=$b;
+                }elseif($a == 'nom'){
+                    $nom_authors=$b;
+                }elseif($a == 'email'){
+                    $email_authors=$b;
+                }
+            }
+                echo '<script type="text/javascript">';
+                echo 'var card = document.createElement("div");';
+                echo 'card.classList = "card";';
+                echo 'var img = document.createElement("img");';
+                echo 'img.src = "img/'.$image_authors.'";';
+                echo 'var div = document.createElement("div");';
+                echo 'var span = document.createElement("span");';
+                echo 'var email = document.createElement("span");';
+                echo 'email.classList = "email";';
+                echo 'email.textContent="'.$email_authors.'";';
+                echo 'span.textContent="'.$nom_authors.'";'; // Added semicolon here
+                echo 'div.appendChild(span);';
+                echo 'div.classList = "div1";'; // Added semicolon here
+                echo 'card.appendChild(img);';
+                echo 'card.appendChild(div);';
+                echo 'card.appendChild(email);';
+                echo 'var authors = document.querySelector(".authors");';
+                echo 'authors.appendChild(card);';
+                echo '</script>';
+        }
+    }
+?>
+
 </body>
 </html>
