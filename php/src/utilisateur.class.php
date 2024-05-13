@@ -25,6 +25,16 @@
       echo 'images.forEach(function(image) { image.src="'.'img/'. $this->image .'"; });'; 
       echo '</script>';
       }
+
+      public function edit_info(){
+         echo '<script type="text/javascript">';
+         echo 'let image = document.querySelectorAll(".image");';
+         echo 'image.foreach(function(image){ image.src="'.'img/'. $this->image .'"; })';
+         
+         echo '</script>';
+
+
+      }
    }
 
 
