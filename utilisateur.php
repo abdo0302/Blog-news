@@ -14,7 +14,7 @@
         <!-- aside bar -->
         <aside >
             <div class ="logo">BLOG News</div>
-            <div class ="photo_de_profl"></div>
+            <div class ="photo_de_profl"><img src="./img/Screenshot 2024-05-09 080644.png" class="image" alt=""></div>
             <div class ="info">
                 <span class ="nom">name</span>
                 <span class ="emai">exmple.@gmail.com</span>
@@ -25,17 +25,28 @@
         <section >
             <H3 >INFo User</H3>
             <!-- div info user -->
-            <div id="info_user">
-                <div class ="photo_de_profl"></div>
-                <div><input type="file"></div>
-                <div><span id="span1">name</span><input type="text" id ="name"></div>
-                <div><span id="span2">email</span><input type="text" id ="email"></div>
-                <div><span id="span3">password</span><input type="password" id ="password"></div>
-                <div class ="btn_info"><button type="submit" id="btn_annule" >annule</button><button type="submit" id="btn_modifier">modifier</button></div>
+            <div class="info_user">
+                <form action="utilisateur.php" method="POST">
+                    <div class ="photo_de_profl"><img src="./img/Screenshot 2024-05-09 080644.png"  class="image" alt=""></div>
+                    <div><input type="file"></div>
+                    <div><span id="span1">name</span><input type="text" id ="name"></div>
+                    <div><span id="span2">email</span><input type="text" id ="email"></div>
+                    <div><span id="span3">password</span><input type="password" id ="password"></div>
+                    <div class ="btn_info"><button type="submit" id="btn_annule" >Cancel</button><button type="submit" id="btn_modifier"> edit </button></div>
+                </form>
             </div>
+
         </section>
+
     </main>
 
     <script src="./js/utilisateur.js"></script>
+    <?php 
+    include "./php/sign_in.php";
+    
+
+   
+    
+    ?>
 </body>
 </html>

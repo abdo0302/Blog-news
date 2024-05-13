@@ -37,6 +37,7 @@ if(isset($_POST['submint_sign_in'])){
         include "./php/src/utilisateur.class.php";
        $utilisateur1=new utilisateur($_SESSION['nom'],$_SESSION['email'],$_SESSION['mot_de_passe'],$_SESSION['est_admin'],$_SESSION['image']);
        $utilisateur1->sign_in();
+       $utilisateur1->edit_info();
     } else {
       echo '<script type="text/javascript">';
       echo 'alert("invalide");'; 
