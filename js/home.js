@@ -7,6 +7,7 @@ let main=document.querySelector('main')
 let home=document.querySelectorAll('.home')
 let nav_bar_heder=document.querySelectorAll('.nav_bar_heder ul li a')
 
+let nav_bar_de_profile_utilisateur=document.querySelector('.nav_bar_de_profile_utilisateur')
 // add class acteve
 nav_bar_heder.forEach((e,i)=>{
     e.addEventListener('click',function(){
@@ -15,6 +16,10 @@ nav_bar_heder.forEach((e,i)=>{
             nav_bar_heder[i].classList.remove('acteve')
         }
         e.classList+=' acteve'
+     }
+     if(i==11){
+        e.classList+=' acteve'
+        nav_bar_de_profile_utilisateur.style.display='none'
      }
     })
 })
@@ -31,6 +36,7 @@ home.forEach((e,i) => {
     e.onclick=()=>{
         main.style.display='flex'
         section_authors.style.display='none'
+        section_blog.style.display='none'
     }
 });
 
@@ -57,6 +63,7 @@ button_sign_up.onclick=()=>{
   }else{
        sign_up_show=false
        contenar_sign_up.style.display='none'
+       
   }
 }
 //Show bar de sign in
@@ -92,4 +99,15 @@ fa_eye.onclick=()=>{
         Password_sign_in.type='password'
     }
     
+}
+
+//close nav bar de profile utilisateur
+let button_close=document.querySelector('.button_close')
+button_close.onclick=()=>{
+    nav_bar_de_profile_utilisateur.style.display='none'
+}
+//show  nav bar de profile utilisateur
+let info_utilisateur=document.querySelector('.info_utilisateur')
+info_utilisateur.onclick=()=>{
+    nav_bar_de_profile_utilisateur.style.display='flex'
 }

@@ -29,14 +29,15 @@ if(isset($_POST['submint_sign_in'])){
                   }
             }
         }
-        echo '<script type="text/javascript">';
-        echo 'var id_utilisateur = ' . json_encode($id_utilisateur) . ';';
-        echo 'var nom_utilisateur = ' . json_encode($nom_utilisateur) . ';';
-        echo 'var email_utilisateur = ' . json_encode($email_utilisateur) . ';';
-        echo 'var mot_de_passe_utilisateur = ' . json_encode($mot_de_passe_utilisateur) . ';';
-        echo 'var image_utilisateur = ' . json_encode($image_utilisateur) . ';';
-        echo 'alert("ID: " + id_utilisateur + "\n nom de utilisateur: " + nom_utilisateur + "\n email de utilisateur: " + email_utilisateur + "\n mot de passe : " + mot_de_passe_utilisateur + "\n image_utilisateur : " + image_utilisateur);';
-        echo '</script>';
+          $_SESSION['nom']=$nom_utilisateur;
+          $_SESSION['email']=$email_utilisateur;
+          $_SESSION['mot_de_passe']=$mot_de_passe_utilisateur;
+          $_SESSION['est_admin']=$est_admin_utilisateur;
+         $_SESSION['image']=$image_utilisateur;
+
+        include "./php/src/utilisateur.class.php";
+       $utilisateur1=new utilisateur($_SESSION['nom'],$_SESSION['email'],$_SESSION['mot_de_passe'],$_SESSION['est_admin'],$_SESSION['image']);
+       $utilisateur1->sign_in();
     } else {
       echo '<script type="text/javascript">';
       echo 'alert("invalide");'; 
