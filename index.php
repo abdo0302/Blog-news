@@ -29,9 +29,9 @@ if (session_status() == PHP_SESSION_NONE) {
                         <!--nav categories-->
                         <div class="nav-categories">
                                 <ul>
-                                    <li><a>Sport</a></li>
-                                    <li><a>Science & Tech</a></li>
-                                    <li><a>Business</a></li>
+                                    <li><a class="button_catego">Sport</a></li>
+                                    <li><a class="button_catego">Science & Tech</a></li>
+                                    <li><a class="button_catego">Business</a></li>
                                 </ul>
                         </div>
                     </li>
@@ -125,38 +125,9 @@ if (session_status() == PHP_SESSION_NONE) {
         <!--============{{section de Recent articles start}}============-->
         <section class="contenar_articles">
             <h5>Recent articles</h5>
-            <div class="contenar_de_Recent_articles">
+            <div class="contenar_de_Recent_articles card_Recent_articles">
                 <!-- les card-->
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
+                
             </div>
         </section>
         <!--section de Recent articles end-->
@@ -164,38 +135,9 @@ if (session_status() == PHP_SESSION_NONE) {
         <!--============{{section de Specialized categories start}}============-->
         <section class="contenar_articles">
             <h5>Specialized categories</h5>
-            <div class="contenar_de_Recent_articles">
+            <div class="contenar_de_Recent_articles card_Specialized_categories">
                 <!-- les card-->
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
+            
             </div>
         </section>
         <!--section de Specialized categories end-->
@@ -203,38 +145,9 @@ if (session_status() == PHP_SESSION_NONE) {
         <!--============{{section de News and events start}}============-->
         <section class="contenar_articles">
             <h5>News and events</h5>
-            <div class="contenar_de_Recent_articles">
+            <div class="contenar_de_Recent_articles card_News_and_events">
                 <!-- les card-->
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
-                <div class="card">
-                    <img src="./img/images.jpg" alt="">
-                    <div class="div1"><span class="date">17 Jan 2022</span> <span class="nome_categori"></span>catégori</div>
-                    <span class="tetle">lorem There is no one who</span>
-                    <span class="button_read_more">Read more</span>
-                </div>
+                
             </div>
         </section>
         <!--section de News and events end--> 
@@ -261,6 +174,36 @@ if (session_status() == PHP_SESSION_NONE) {
             
     </section>
         <!--============={{section de blog end}}=============-->        
+    
+                         <!--categore-->   
+
+
+    <!--============={{section de sport start}}=============-->
+    <section class="section_sport catego">
+             <h5>Sport</h5>
+            <div class="contenar_de_Recent_articles card_artecle_sport">
+                <!-- les card-->
+            </div>
+    </section>        
+    <!--============={{section de sport end}}=============-->
+
+    <!--============={{section de Science & Tech start}}=============-->
+    <section class="section_Science_Tech catego">
+            <h5>Science & Tech</h5>
+            <div class="contenar_de_Recent_articles card_Science_Tech">
+                <!-- les card-->
+            </div>
+    </section>
+    <!--============={{section de Science & Tech end}}=============-->
+
+     <!--============={{section de Business start}}=============-->
+     <section class="ection_Business catego">
+             <h5>Business</h5>
+            <div class="contenar_de_Recent_articles card_Business">
+                <!-- les card-->
+            </div>
+    </section>
+    <!--============={{section de Business end}}=============-->
 
     <!--============[[footer start]]=================-->
     <footer>
@@ -324,44 +267,14 @@ if (session_status() == PHP_SESSION_NONE) {
     }
     ?>
    <?php
-    $selects = $conn->query("SELECT * FROM utilisateurs WHERE est_admin=1");
-    $results = $selects->fetchAll(PDO::FETCH_ASSOC);
-    if (count($results) > 0) {
-        $image_authors='';
-        $nom_authors='';
-        $email_authors='';
-        foreach ($results as $row) {
-            foreach($row as $a => $b){
-                if($a == 'image'){
-                    $image_authors=$b;
-                }elseif($a == 'nom'){
-                    $nom_authors=$b;
-                }elseif($a == 'email'){
-                    $email_authors=$b;
-                }
-            }
-                echo '<script type="text/javascript">';
-                echo 'var card = document.createElement("div");';
-                echo 'card.classList = "card";';
-                echo 'var img = document.createElement("img");';
-                echo 'img.src = "img/'.$image_authors.'";';
-                echo 'var div = document.createElement("div");';
-                echo 'var span = document.createElement("span");';
-                echo 'var email = document.createElement("span");';
-                echo 'email.classList = "email";';
-                echo 'email.textContent="'.$email_authors.'";';
-                echo 'span.textContent="'.$nom_authors.'";'; // Added semicolon here
-                echo 'div.appendChild(span);';
-                echo 'div.classList = "div1";'; // Added semicolon here
-                echo 'card.appendChild(img);';
-                echo 'card.appendChild(div);';
-                echo 'card.appendChild(email);';
-                echo 'var authors = document.querySelector(".authors");';
-                echo 'authors.appendChild(card);';
-                echo '</script>';
-        }
-    }
-?>
+    include './php/Authors.php';
+    include './php/section_sport.php';
+    include './php/section_Science_Tech.php';
+    include './php/section_Business.php';
+    include './php/section_Recent_articles.php';
+    include './php/section_Specialized_categories.php';
+    include './php/section_News_and_events.php';
+?>    
 
 </body>
 </html>

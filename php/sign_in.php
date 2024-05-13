@@ -34,7 +34,6 @@ if(isset($_POST['submint_sign_in'])){
           $_SESSION['mot_de_passe']=$mot_de_passe_utilisateur;
           $_SESSION['est_admin']=$est_admin_utilisateur;
          $_SESSION['image']=$image_utilisateur;
-
         include "./php/src/utilisateur.class.php";
        $utilisateur1=new utilisateur($_SESSION['nom'],$_SESSION['email'],$_SESSION['mot_de_passe'],$_SESSION['est_admin'],$_SESSION['image']);
        $utilisateur1->sign_in();

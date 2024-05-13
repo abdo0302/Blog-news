@@ -29,11 +29,17 @@ button_Authors.onclick=()=>{
     for(let y=0;y<section_header.length;y++){
         section_header[y].style.display='none'
     }
+    for (let t = 0; t < catego.length; t++) {
+        catego[t].style.display='none'
+    }
     section_authors.style.display='flex'
 
 }
 home.forEach((e,i) => {
     e.onclick=()=>{
+        for (let t = 0; t < catego.length; t++) {
+            catego[t].style.display='none'
+        }
         main.style.display='flex'
         section_authors.style.display='none'
         section_blog.style.display='none'
@@ -45,6 +51,9 @@ button_blog.forEach((e,i)=>{
     e.addEventListener('click',function(){
         for(let y=0;y<section_header.length;y++){
             section_header[y].style.display='none'
+        }
+        for (let t = 0; t < catego.length; t++) {
+            catego[t].style.display='none'
         }
         section_blog.style.display='flex'
     })
@@ -111,3 +120,20 @@ let info_utilisateur=document.querySelector('.info_utilisateur')
 info_utilisateur.onclick=()=>{
     nav_bar_de_profile_utilisateur.style.display='flex'
 }
+//show categore
+let button_catego=document.querySelectorAll('.button_catego')
+
+let catego=document.querySelectorAll('.catego')
+
+button_catego.forEach((e,i)=>{
+    e.addEventListener('click',()=>{
+        for(let y=0;y<section_header.length;y++){
+            section_header[y].style.display='none'
+        }
+        for (let t = 0; t < catego.length; t++) {
+            catego[t].style.display='none'
+        }
+        catego[i].style.display='block'
+    })
+})
+

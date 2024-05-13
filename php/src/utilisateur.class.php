@@ -14,6 +14,11 @@
 
         }
         public function sign_in() {
+         if($this->role==true){
+            echo '<script type="text/javascript">';
+            echo 'window.location.href = "admin.php";';
+            echo '</script>';
+         }
       echo '<script type="text/javascript">';
        echo 'var signs = document.querySelectorAll(".sign");';
        echo 'var names = document.querySelectorAll(".name");';

@@ -116,6 +116,7 @@ main{
     gap: 30px;
 }
 .card{
+    width: 319px;
     padding: 25px;
     padding-bottom: 10px;
     border-radius: 10px;
@@ -498,3 +499,34 @@ footer{
     color: #000000;
 }
 /**/
+.catego{
+    margin-top: 90px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+.catego h5{
+    font-size: 25px;
+    margin-bottom: 15px;
+    border-left:8px solid red ;
+    padding-left: 8px;
+}
+/**/
+.contenar_comant_lik{
+margin-top: 20px;
+margin-top: 10px;
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 20px;
+font-size: 26px;
+}
+.contenar_comant_lik a span{
+    font-size: 18px;
+}
+.contenar_comant_lik a{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
