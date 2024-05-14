@@ -413,9 +413,6 @@ footer{
     margin-right: 10px;
 }
 /*info_utilisateur*/
-.sign{
-   /* display: none;*/
-}
 .info_utilisateur{
     display: flex;
     align-items: center;
@@ -529,4 +526,9 @@ font-size: 26px;
     display: flex;
     align-items: center;
     gap: 6px;
+}
+.formm{
+    position: absolute;
+    z-index: -12;
+    top: 0;
 }

@@ -42,6 +42,8 @@ if (count($results) > 0) {
             echo 'span.textContent="'.$date_creation_Article_sport.'";';
             echo 'var contenar_comant_lik = document.createElement("div");';
             echo 'var like = document.createElement("a");';
+            echo 'like.classList = "like";';
+            echo 'like.id = "'.$id_Article_sport.'";';
             echo 'var comant = document.createElement("a");';
             echo 'var i1 = document.createElement("i");';
             echo 'var i2 = document.createElement("i");';
@@ -67,6 +69,15 @@ if (count($results) > 0) {
             echo 'var card_artecle_sport = document.querySelector(".card_artecle_sport");';
             echo 'card_artecle_sport.appendChild(card);';
             echo '</script>';
+            if(isset($_SESSION['nom'])){
+                $selects = $conn->query('SELECT * FROM articlelikes WHERE ArticleID='.$id_Article_sport.' AND UserID='.$_SESSION["id"].'');
+            $results = $selects->fetchAll(PDO::FETCH_ASSOC);
+            if (count($results) !== 0) {
+                echo '<script type="text/javascript">';
+                echo 'i1.style.color="red"';
+                echo '</script>';
+            }
+            } 
     }
 }
 ?>

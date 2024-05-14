@@ -261,7 +261,7 @@ if (session_status() == PHP_SESSION_NONE) {
     if(isset($_SESSION['nom'])&& !isset($_POST['log_out'])){
         if(!class_exists('utilisateur')){
             include "./php/src/utilisateur.class.php";
-            $utilisateur1=new utilisateur($_SESSION['nom'],$_SESSION['email'],$_SESSION['mot_de_passe'],$_SESSION['est_admin'],$_SESSION['image']);
+            $utilisateur1=new utilisateur($_SESSION['id'],$_SESSION['nom'],$_SESSION['email'],$_SESSION['mot_de_passe'],$_SESSION['est_admin'],$_SESSION['image']);
         } 
        $utilisateur1->sign_in();
     }
@@ -274,7 +274,44 @@ if (session_status() == PHP_SESSION_NONE) {
     include './php/section_Recent_articles.php';
     include './php/section_Specialized_categories.php';
     include './php/section_News_and_events.php';
-?>    
 
+    
+?>   
+<form action="index.php" method="POST" class="formm">
+<input type="text" class="y" name="y">
+<input type="submit" value="Sign Up" name="s" class="d">
+</form> 
+<script>
+    let buttonsLike = document.querySelectorAll('.like');
+    let d=document.querySelector('.d')
+    let y=document.querySelector('.y')
+    buttonsLike.forEach((e) => {
+    e.addEventListener('click', () => {
+       y.value=e.id
+       d.click();
+    });
+});
+
+    
+</script>
+<?php
+if(isset($_SESSION['nom'])){
+    if(isset($_POST['s'])){
+   $articleId = $_POST['y'];
+$selects = $conn->query('SELECT * FROM articlelikes WHERE ArticleID='.$articleId.' AND UserID='.$_SESSION["id"].'');
+$results = $selects->fetchAll(PDO::FETCH_ASSOC);
+if (count($results) == 0) {
+    $sql = 'INSERT INTO articlelikes (ArticleID, UserID)
+    VALUES ('.$articleId.', '.$_SESSION["id"].')';
+    $conn->exec($sql);
+}else{
+    $sql = 'DELETE FROM articlelikes wHERE ArticleID='.$articleId.' AND UserID='.$_SESSION["id"].'';
+    $conn->exec($sql);
+}
+ 
+}
+}
+  
+?>
 </body>
 </html>

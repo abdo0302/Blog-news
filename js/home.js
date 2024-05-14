@@ -136,4 +136,3 @@ button_catego.forEach((e,i)=>{
         catego[i].style.display='block'
     })
 })
-

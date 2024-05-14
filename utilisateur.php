@@ -1,3 +1,6 @@
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,9 +45,9 @@
 
     <script src="./js/utilisateur.js"></script>
     <?php 
-    include "./php/sign_in.php";
-    
-
+    include "./php/src/utilisateur.class.php";
+    $utilisateur1=new utilisateur($_SESSION['id'],$_SESSION['nom'],$_SESSION['email'],$_SESSION['mot_de_passe'],$_SESSION['est_admin'],$_SESSION['image']);
+    $utilisateur1->edit_info();
    
     
     ?>

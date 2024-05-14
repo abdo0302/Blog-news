@@ -1,11 +1,13 @@
 <?php
    class utilisateur{
+        private $id;
         private $nom;
         private $email;
         private $mot_de_passe;
         private $role;
         private $image;
-        public function __construct($nom,$email,$mot_de_passe,$role,$image){
+        public function __construct($id,$nom,$email,$mot_de_passe,$role,$image){
+           $this->id=$id;
            $this->nom=$nom;
            $this->email=$email;
            $this->mot_de_passe=$mot_de_passe;
@@ -30,16 +32,12 @@
       echo 'images.forEach(function(image) { image.src="'.'img/'. $this->image .'"; });'; 
       echo '</script>';
       }
-
       public function edit_info(){
          echo '<script type="text/javascript">';
-         echo 'let image = document.querySelectorAll(".image");';
-         echo 'image.foreach(function(image){ image.src="'.'img/'. $this->image .'"; })';
-         
+         echo 'var images = document.querySelectorAll(".image");'; 
+         echo 'images.forEach(function(image){ image.src="img/'. $this->image .'"; });'; 
          echo '</script>';
-
-
-      }
+     }
    }
 
 
