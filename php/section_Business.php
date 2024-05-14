@@ -31,13 +31,19 @@ if (count($results) > 0) {
         }
             echo '<script type="text/javascript">';
             echo 'var card = document.createElement("div");';
-            echo 'card.classList = "card";';
+            echo 'card.classList = "card article";';
             echo 'var img = document.createElement("img");';
+            echo 'img.classList = "image";';
             echo 'img.src = "img/'.$image_Article_business.'";';
             echo 'var div = document.createElement("div");';
             echo 'var span = document.createElement("span");';
+            echo 'var contenu = document.createElement("p");';
+            echo 'contenu.classList = "conten";';
+            echo 'contenu.textContent="'.$contenu_Article_business.'";';
+            echo 'card.appendChild(contenu);';
+            echo 'span.classList = "dats";';
             echo 'var email = document.createElement("span");';
-            echo 'email.classList = "email";';
+            echo 'email.classList = "email tetle_articls";';
             echo 'email.textContent="'.$titre_Article_business.'";';
             echo 'span.textContent="'.$date_creation_Article_business.'";';
             echo 'var contenar_comant_lik = document.createElement("div");';

@@ -205,6 +205,17 @@ if (session_status() == PHP_SESSION_NONE) {
     </section>
     <!--============={{section de Business end}}=============-->
 
+    <!--============={{section show article start}}=============-->
+    <section class="contenar_show_article">
+        <div>
+            <h2 class="tetle_article"></h2>
+            <img src="" alt="" class="image_article">
+            <p class="contnu_article">tropimp[wert8o70q vnotweo80qcwerp,k[8 ntrouwer re  tyiv imte6bu ymuymgfy uynkl uy,dg </p>
+            <span ><span>date de creation: </span> <span class="dat"></span></span>
+        </div>
+    </section>
+    <!--============={{section show article end}}=============-->
+
     <!--============[[footer start]]=================-->
     <footer>
         <div class="section_footer">
@@ -237,7 +248,7 @@ if (session_status() == PHP_SESSION_NONE) {
     </footer>
     <!--footer end -->
 
-    <script src="./js/home.js"></script>
+    
     <?php
     if(isset($_POST['submit'])){
          $image = $_FILES['image'];
@@ -313,5 +324,6 @@ if (count($results) == 0) {
 }
   
 ?>
+<script src="./js/home.js"></script>
 </body>
 </html>

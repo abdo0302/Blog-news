@@ -1,3 +1,4 @@
+let contenar_show_article=document.querySelector('.contenar_show_article')
 let button_Authors=document.querySelector('.button_Authors')
 let button_blog=document.querySelectorAll('.button_blog')
 let section_authors=document.querySelector('.section_authors')
@@ -11,6 +12,7 @@ let nav_bar_de_profile_utilisateur=document.querySelector('.nav_bar_de_profile_u
 // add class acteve
 nav_bar_heder.forEach((e,i)=>{
     e.addEventListener('click',function(){
+        contenar_show_article.style.display='none'
      if(i<7){
         for(let i=0;i<nav_bar_heder.length;i++){
             nav_bar_heder[i].classList.remove('acteve')
@@ -127,6 +129,7 @@ let catego=document.querySelectorAll('.catego')
 
 button_catego.forEach((e,i)=>{
     e.addEventListener('click',()=>{
+        contenar_show_article.style.display='none'
         for(let y=0;y<section_header.length;y++){
             section_header[y].style.display='none'
         }
@@ -136,3 +139,31 @@ button_catego.forEach((e,i)=>{
         catego[i].style.display='block'
     })
 })
+//section show article
+let article=document.querySelectorAll('.article')
+let tetle_article=document.querySelector('.tetle_article')
+let image_article=document.querySelector('.image_article')
+let dat=document.querySelector('.dat')
+let contnu_article=document.querySelector('.contnu_article')
+
+let image=document.querySelectorAll('.image')
+let tetle_articls=document.querySelectorAll('.tetle_articls')
+let dats=document.querySelectorAll('.dats')
+let conten=document.querySelectorAll('.conten')
+console.log(conten);
+article.forEach((e,i)=>{
+    e.addEventListener('click',()=>{
+        image_article.src=image[i].src
+        tetle_article.textContent=tetle_articls[i].textContent
+        dat.textContent=dats[i].textContent
+        contnu_article.textContent=conten[i].textContent
+        for (let o = 0; o < catego.length; o++) {
+            catego[o].style.display='none'
+        }
+        for(let y=0;y<section_header.length;y++){
+            section_header[y].style.display='none'
+        }
+        contenar_show_article.style.display='flex'
+    })
+})
+

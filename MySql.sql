@@ -19,12 +19,12 @@ CREATE TABLE Categories (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL
 );
-INSERT INTO Categories (nom) VALUES("Sport");
-INSERT INTO Categories (nom) VALUES("Science & Tech");
-INSERT INTO Categories (nom) VALUES("Business");
 INSERT INTO Categories (nom) VALUES("Recent articles");
 INSERT INTO Categories (nom) VALUES("Specialized categories");
 INSERT INTO Categories (nom) VALUES("News and events");
+INSERT INTO Categories (nom) VALUES("Sport");
+INSERT INTO Categories (nom) VALUES("Science & Tech");
+INSERT INTO Categories (nom) VALUES("Business");
 
 CREATE TABLE Articles (
     id INT AUTO_INCREMENT PRIMARY KEY,
