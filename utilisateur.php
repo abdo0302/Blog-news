@@ -60,8 +60,8 @@ if (!isset($_SESSION['id'])) {
                         <input type="text" id="password" name="password" class="password_input" value="<?php echo $_SESSION['mot_de_passe']; ?>">
                     </div>
                     <div class="btn_info">
-                        <input type="submit" id="btn_annule" name="edit" value="Edit">
-                        <button type="button" id="btn_modifier">Ann</button>
+                        <input type="submit" id="btn_modifier" name="edit" value="Edit">
+                        <button type="button" id="btn_annule">Ann</button>
                     </div>
                 </form>
             </div>
