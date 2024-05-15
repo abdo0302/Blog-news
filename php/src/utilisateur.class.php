@@ -35,6 +35,16 @@
       public function edit_info(){
          echo '<script type="text/javascript">';
          echo 'var images = document.querySelectorAll(".image");'; 
+         echo 'var emai = document.querySelector(".emai");';
+         echo 'var Name = document.querySelector(".Name");';
+         echo 'var non_input=document.querySelector(".non_input");';
+         echo 'var email_input=document.querySelector(".email_input");';
+         echo 'var password_input=document.querySelector(".password_input");';
+         echo 'password_input.value="'.$this->mot_de_passe.'";';
+         echo 'email_input.value="'.$this->email.'";';
+         echo 'non_input.value="'.$this->nom.'";';
+         echo 'emai.textContent="'.$this->email.'";';
+         echo 'Name.textContent="'.$this->nom.'";';
          echo 'images.forEach(function(image){ image.src="img/'. $this->image .'"; });'; 
          echo '</script>';
      }

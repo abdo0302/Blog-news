@@ -165,3 +165,15 @@ input {
 #btn_modifier:hover {
   background-color: #000;
 }
+.log_out{
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 8px;
+}
+.log_out:hover{
+  background-color: gray;
+}
