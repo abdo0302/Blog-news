@@ -1,22 +1,66 @@
 <?php
+    
 $selects = $conn->query("SELECT * FROM Articles WHERE categorie_id=3");
 $results = $selects->fetchAll(PDO::FETCH_ASSOC);
 if (count($results) > 0) {
-    $id_Article_business='';
-    $titre_Article_business='';
-    $contenu_Article_business='';
-    $image_Article_business='';
-    $date_creation_Article_business='';
-   // $auteur_id_Article_business='';
-    $categorie_id_Article_business='';
-    $nomber_Article_business='';
+    $id_Article_business = '';
+    $titre_Article_business = '';
+    $contenu_Article_business = '';
+    $image_Article_business = '';
+    $date_creation_Article_business = '';
+    $categorie_id_Article_business = '';
+    $nomber_Article_business = '';
+    $nomber_comant = 0;
+    $auteur_id = '';
+    $name_auteur = '';
+    $contenu = '';
+
     foreach ($results as $row) {
-        foreach($row as $a => $b){
-            if($a == 'id'){
-                $id_Article_business=$b;
-                $select = $conn->query("SELECT * FROM articlelikes WHERE ArticleID =$id_Article_business");
+        $nomber_comant = 0;
+        echo '<script type="text/javascript">';
+        echo 'var cc = document.createElement("div");';
+        echo 'var t=[];';
+        echo 'var x="";';
+        echo '</script>';
+        foreach($row as $a => $b) {
+            if($a == 'id') {
+                $id_Article_business = $b;
+                $select = $conn->query("SELECT * FROM articlelikes WHERE ArticleID = $id_Article_business");
                 $result = $select->fetchAll(PDO::FETCH_ASSOC);
-                $nomber_Article_business=count($result);
+                $nomber_Article_business = count($result);
+
+                $selec = $conn->query("SELECT * FROM Commentaires WHERE article_id = $id_Article_business");
+                $resulta = $selec->fetchAll(PDO::FETCH_ASSOC);
+                if (count($resulta) > 0) {
+                    
+                    foreach ($resulta as $r) {
+                        $nomber_comant++;
+                        
+                        foreach($r as $u => $n) {
+                            if($u == 'auteur_id') { 
+                                $auteur_id = $n;
+                                $selec = $conn->query("SELECT nom FROM utilisateurs WHERE id = $auteur_id");
+                                $resulta = $selec->fetchAll(PDO::FETCH_ASSOC);
+                                if (count($resulta) > 0) {
+                                    foreach ($resulta as $r) {
+                                        $name_auteur = $r['nom'];
+                                    }
+                                }
+                            }
+                            if($u == 'contenu') {
+                                $contenu = $n;
+                                 
+                            }   
+                            
+                        }  
+                          echo '<script type="text/javascript">';
+                           // echo 'cc.innerHTML+="<h4>' . $name_auteur. ' ::  <span style=\"color: #181818;\">' .$contenu.'</span></h4>";';
+                            echo 'x+="<h4>' . $name_auteur. ' ::  <span style=\"color: #181818;\">' .$contenu.'</span></h4>";';
+                            echo '</script>';
+                    }
+                            
+                }  
+                           
             }if($a == 'titre'){
                 $titre_Article_business=$b;
             }elseif($a == 'contenu'){
@@ -30,6 +74,7 @@ if (count($results) > 0) {
             }
         }
             echo '<script type="text/javascript">';
+            echo 'cc.classList = "comants";';
             echo 'var card = document.createElement("div");';
             echo 'card.classList = "card article";';
             echo 'var img = document.createElement("img");';
@@ -46,6 +91,7 @@ if (count($results) > 0) {
             echo 'email.classList = "email tetle_articls";';
             echo 'email.textContent="'.$titre_Article_business.'";';
             echo 'span.textContent="'.$date_creation_Article_business.'";';
+            echo 'cc.innerHTML=x;';
             echo 'var contenar_comant_lik = document.createElement("div");';
             echo 'var like = document.createElement("a");';
             echo 'like.classList = "like";';
@@ -56,7 +102,7 @@ if (count($results) > 0) {
             echo 'var span1 = document.createElement("span");';
             echo 'var span2 = document.createElement("span");';
             echo 'span1.textContent="'.$nomber_Article_business.'";';
-            echo 'span2.textContent="100";';
+            echo 'span2.textContent="'.$nomber_comant.'";';
             echo 'i1.classList = "fa-solid fa-heart";';
             echo 'i2.classList = "fa-solid fa-comment";';
             echo 'contenar_comant_lik.classList = "contenar_comant_lik";';
@@ -72,6 +118,7 @@ if (count($results) > 0) {
             echo 'card.appendChild(div);';
             echo 'card.appendChild(email);';
             echo 'card.appendChild(contenar_comant_lik);';
+            echo 'card.appendChild(cc);';
             echo 'var card_Business = document.querySelector(".card_Business");';
             echo 'card_Business.appendChild(card);';
             echo '</script>';
@@ -86,5 +133,7 @@ if (count($results) > 0) {
             }
             
     }
-}
+} echo '<script type="text/javascript">';
+                            echo 'console.log([...new Set(t)]);';
+                            echo '</script>';
 ?>

@@ -10,13 +10,52 @@ if (count($results) > 0) {
    // $auteur_id_Article_section_Recent='';
     $categorie_id_Article_section_Recent='';
     $nomber_Article_section_Recent='';
+    $auteur_id_section_Recent = '';
+    $name_auteur_section_Recent = '';
+    $contenu_section_Recent = '';
     foreach ($results as $row) {
+        $nomber_comant_section_Recent = 0;
+        echo '<script type="text/javascript">';
+        echo 'var cc = document.createElement("div");';
+        echo 'var t=[];';
+        echo '</script>';
         foreach($row as $a => $b){
             if($a == 'id'){
                 $id_Article_section_Recent=$b;
                 $select = $conn->query("SELECT * FROM articlelikes WHERE ArticleID =$id_Article_section_Recent");
                 $result = $select->fetchAll(PDO::FETCH_ASSOC);
                 $nomber_Article_section_Recent=count($result);
+
+                $selec = $conn->query("SELECT * FROM Commentaires WHERE article_id = $id_Article_section_Recent");
+                $resulta = $selec->fetchAll(PDO::FETCH_ASSOC);
+                if (count($resulta) > 0) {
+                    
+                    foreach ($resulta as $r) {
+                        $nomber_comant_section_Recent++;
+                        
+                        foreach($r as $u => $n) {
+                            if($u == 'auteur_id') { 
+                                $auteur_id_section_Recent = $n;
+                                $selec = $conn->query("SELECT nom FROM utilisateurs WHERE id = $auteur_id_section_Recent");
+                                $resulta = $selec->fetchAll(PDO::FETCH_ASSOC);
+                                if (count($resulta) > 0) {
+                                    foreach ($resulta as $r) {
+                                        $name_auteur_section_Recent = $r['nom'];
+                                    }
+                                }
+                            }
+                            if($u == 'contenu') {
+                                $contenu_section_Recent = $n;
+                                 
+                            }   
+                            
+                        }  
+                          echo '<script type="text/javascript">';
+                            echo 'cc.innerHTML+="<h4>' .$name_auteur_section_Recent . ' ::  <span style=\"color: #181818;\">' . $contenu_section_Recent. '</span></h4>";';
+                            echo '</script>';
+                    }
+                            
+                }
             }if($a == 'titre'){
                 $titre_Article_section_Recent=$b;
             }elseif($a == 'contenu'){
@@ -30,6 +69,7 @@ if (count($results) > 0) {
             }
         }
             echo '<script type="text/javascript">';
+            echo 'cc.classList = "comants";';
             echo 'var card = document.createElement("div");';
             echo 'card.classList = "card article";';
             echo 'var img = document.createElement("img");';
@@ -56,7 +96,7 @@ if (count($results) > 0) {
             echo 'var span1 = document.createElement("span");';
             echo 'var span2 = document.createElement("span");';
             echo 'span1.textContent="'.$nomber_Article_section_Recent.'";';
-            echo 'span2.textContent="100";';
+            echo 'span2.textContent="'.$nomber_comant_section_Recent.'";';
             echo 'i1.classList = "fa-solid fa-heart";';
             echo 'i2.classList = "fa-solid fa-comment";';
             echo 'contenar_comant_lik.classList = "contenar_comant_lik";';
@@ -72,6 +112,7 @@ if (count($results) > 0) {
             echo 'card.appendChild(div);';
             echo 'card.appendChild(email);';
             echo 'card.appendChild(contenar_comant_lik);';
+            echo 'card.appendChild(cc);';
             echo 'var card_Recent_articles = document.querySelector(".card_Recent_articles");';
             echo 'card_Recent_articles.appendChild(card);';
             echo '</script>';

@@ -6,6 +6,7 @@
     <title>Blog news</title>
     <!--logo de page-->
     <link rel="icon" href="./img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/admin.css">
 	</head>
 <body>
@@ -135,7 +136,12 @@
                     </div>
                 </div>
             </div>
-            <div class="card">artices</div>
+            <div class="card_Business">artices</div>
+            <div class="card_News_and_events">artices</div>
+            <div class="card_Recent_articles">artices</div>
+            <div class="card_Science_Tech">artices</div>
+            <div class="card_Specialized_categories">artices</div>
+            <div class="card_artecle_sport">artices</div>
         </section>
     </main>
     <?php 

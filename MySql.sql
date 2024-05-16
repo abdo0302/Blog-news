@@ -6,6 +6,7 @@ CREATE TABLE utilisateurs (
     image VARCHAR(255) ,
     est_admin BOOLEAN DEFAULT FALSE
 );
+INSERT INTO utilisateurs (nom,email,mot_de_passe,image,est_admin) VALUES("admin","amin@gmail.com","admin","p11993131_e_v13_ab.jpg",1);
 
 CREATE TABLE administrateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,

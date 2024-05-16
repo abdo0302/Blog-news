@@ -1,4 +1,5 @@
 <?php 
+//start session
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -38,7 +39,7 @@ if (session_status() == PHP_SESSION_NONE) {
                     <li><a href="#" class="button_Authors">Authors</a></li>
                     <li class="sign">
                         <a href="#" class="button_sign_up"><i class="fa-solid fa-right-to-bracket"></i> SIGN UP</a>
-                        <!--bar de sign up  start-->
+                        <!--nav bar de sign up  start-->
                         <div class="contenar_sign_up">
                             <h2 class="tetle_sign_up">Create a Profile</h2>
                             <div class="profile">
@@ -57,7 +58,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             <a href="#" class="to_Sign_In">Already have an account? <span>Sign In</span></a>
                             
                         </div>
-                        <!--bar de sign up  end-->
+                        <!--nav bar de sign up  end-->
                     </li>
                     <li class="sign">
                         <a href="#" class="button_sign_in"><i class="fa-solid fa-circle-user"></i> SIGN IN</a>
@@ -207,11 +208,23 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <!--============={{section show article start}}=============-->
     <section class="contenar_show_article">
-        <div>
+        <div class="contenar_article">
             <h2 class="tetle_article"></h2>
             <img src="" alt="" class="image_article">
-            <p class="contnu_article">tropimp[wert8o70q vnotweo80qcwerp,k[8 ntrouwer re  tyiv imte6bu ymuymgfy uynkl uy,dg </p>
+            <p class="contnu_article"></p>
             <span ><span>date de creation: </span> <span class="dat"></span></span>
+        </div>
+        <div class="contenar_Commentaires">
+            <span class="contenar_article">Commentaires</span>
+            <div class="ccomants">
+                uiluy
+            </div>
+            <div class="continar_form">
+                <form action="">
+                    <input type="text" class="input_text_comant">
+                    <input type="submit" class="button_submit_comant">
+                </form>
+            </div>
         </div>
     </section>
     <!--============={{section show article end}}=============-->
@@ -235,10 +248,10 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
             <!--icone social media footer-->
             <div class="social_media">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-discord"></i>
-            <i class="fa-brands fa-twitter"></i>
+            <a href="https://www.facebook.com/abdelljabar.hamri.7543/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/dr.abdelljabar/"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://discord.com/channels/@me/1236975432864366645"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://twitter.com/Abdejjabar76092"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
             <!--bar coperite-->

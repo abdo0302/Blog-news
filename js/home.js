@@ -150,9 +150,14 @@ let image=document.querySelectorAll('.image')
 let tetle_articls=document.querySelectorAll('.tetle_articls')
 let dats=document.querySelectorAll('.dats')
 let conten=document.querySelectorAll('.conten')
-console.log(conten);
+
+let comants=document.querySelectorAll('.comants')
+console.log(comants[0].innerHTML);
+let ccomants=document.querySelector('.ccomants')
+
 article.forEach((e,i)=>{
     e.addEventListener('click',()=>{
+        ccomants.innerHTML=comants[i].innerHTML
         image_article.src=image[i].src
         tetle_article.textContent=tetle_articls[i].textContent
         dat.textContent=dats[i].textContent
@@ -166,4 +171,5 @@ article.forEach((e,i)=>{
         contenar_show_article.style.display='flex'
     })
 })
+
 

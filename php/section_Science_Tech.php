@@ -10,13 +10,52 @@ if (count($results) > 0) {
    // $auteur_id_Article_science='';
     $categorie_id_Article_science='';
     $nomber_like='';
+    $auteur_id_science = '';
+    $name_auteur_science = '';
+    $contenu_science = '';
     foreach ($results as $row) {
+        $nomber_comant_science = 0;
+        echo '<script type="text/javascript">';
+        echo 'var cc = document.createElement("div");';
+        echo 'var t=[];';
+        echo '</script>';
         foreach($row as $a => $b){
             if($a == 'id'){
                 $id_Article_science=$b;
                 $select = $conn->query("SELECT * FROM articlelikes WHERE ArticleID =$id_Article_science");
                 $result = $select->fetchAll(PDO::FETCH_ASSOC);
                 $nomber_like=count($result);
+
+                $selec = $conn->query("SELECT * FROM Commentaires WHERE article_id = $id_Article_science");
+                $resulta = $selec->fetchAll(PDO::FETCH_ASSOC);
+                if (count($resulta) > 0) {
+                    
+                    foreach ($resulta as $r) {
+                        $nomber_comant_science++;
+                        
+                        foreach($r as $u => $n) {
+                            if($u == 'auteur_id') { 
+                                $auteur_id_science = $n;
+                                $selec = $conn->query("SELECT nom FROM utilisateurs WHERE id = $auteur_id_science");
+                                $resulta = $selec->fetchAll(PDO::FETCH_ASSOC);
+                                if (count($resulta) > 0) {
+                                    foreach ($resulta as $r) {
+                                        $name_auteur_science = $r['nom'];
+                                    }
+                                }
+                            }
+                            if($u == 'contenu') {
+                                $contenu_science = $n;
+                                 
+                            }   
+                            
+                        }  
+                          echo '<script type="text/javascript">';
+                            echo 'cc.innerHTML+="<h4>' .$name_auteur_science . ' ::  <span style=\"color: #181818;\">' . $contenu_sciencet. '</span></h4>";';
+                            echo '</script>';
+                    }
+                            
+                }
             }if($a == 'titre'){
                 $titre_Article_science=$b;
             }elseif($a == 'contenu'){
@@ -30,6 +69,7 @@ if (count($results) > 0) {
             }
         }
             echo '<script type="text/javascript">';
+            echo 'cc.classList = "comants";';
             echo 'var card = document.createElement("div");';
             echo 'card.classList = "card article";';
             echo 'var img = document.createElement("img");';
@@ -56,7 +96,7 @@ if (count($results) > 0) {
             echo 'var span1 = document.createElement("span");';
             echo 'var span2 = document.createElement("span");';
             echo 'span1.textContent="'.$nomber_like.'";';
-            echo 'span2.textContent="100";';
+            echo 'span2.textContent="'.$nomber_comant_science.'";';
             echo 'i1.classList = "fa-solid fa-heart";';
             echo 'i2.classList = "fa-solid fa-comment";';
             echo 'contenar_comant_lik.classList = "contenar_comant_lik";';
@@ -72,6 +112,7 @@ if (count($results) > 0) {
             echo 'card.appendChild(div);';
             echo 'card.appendChild(email);';
             echo 'card.appendChild(contenar_comant_lik);';
+            echo 'card.appendChild(cc);';
             echo 'var card_Science_Tech = document.querySelector(".card_Science_Tech");';
             echo 'card_Science_Tech.appendChild(card);';
             echo '</script>';

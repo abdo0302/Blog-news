@@ -234,3 +234,50 @@ aside ul{
 .cardBox .card:hover .iconBx {
   color: var(--white);
 }
+
+
+.comants{
+  display: none;
+}
+.card{
+  width: 319px;
+  padding: 25px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  background-color: #C4C4C4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card img{
+  border-radius: 9px;
+  width: 269px;
+  height: 188px;
+}
+.div1{
+  margin-top: 15px;
+  margin-bottom: 8px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.tetle{
+  font-weight: 600;
+  font-size: 18px;
+  width: 90%;
+}
+.button_read_more{
+  margin-top: 20px;
+  margin-right: auto;
+  font-weight: 800;
+}
+.email{
+  font-weight: 600;
+  font-size: 18px;
+  width: 90%;
+}
+.conten{
+  display: none;
+  color: #181818;
+}
