@@ -19,7 +19,6 @@ if (count($results) > 0) {
         $nomber_comant = 0;
         echo '<script type="text/javascript">';
         echo 'var cc = document.createElement("div");';
-        echo 'var t=[];';
         echo 'var x="";';
         echo '</script>';
         foreach($row as $a => $b) {
@@ -76,6 +75,9 @@ if (count($results) > 0) {
             echo '<script type="text/javascript">';
             echo 'cc.classList = "comants";';
             echo 'var card = document.createElement("div");';
+            echo 'var id_de_article=document.createElement("span");';
+            echo 'id_de_article.classList = "id_de_article idd";';
+            echo 'id_de_article.textContent="'.$id_Article_business.'";';
             echo 'card.classList = "card article";';
             echo 'var img = document.createElement("img");';
             echo 'img.classList = "image";';
@@ -116,6 +118,7 @@ if (count($results) > 0) {
             echo 'contenar_comant_lik.appendChild(like);';
             echo 'card.appendChild(img);';
             echo 'card.appendChild(div);';
+            echo 'card.appendChild(id_de_article);';
             echo 'card.appendChild(email);';
             echo 'card.appendChild(contenar_comant_lik);';
             echo 'card.appendChild(cc);';

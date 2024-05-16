@@ -71,6 +71,9 @@ if (count($results) > 0) {
             echo '<script type="text/javascript">';
             echo 'cc.classList = "comants";';
             echo 'var card = document.createElement("div");';
+            echo 'var id_de_article=document.createElement("span");';
+            echo 'id_de_article.classList = "id_de_article idd";';
+            echo 'id_de_article.textContent="'.$id_Article_section_Recent.'";';
             echo 'card.classList = "card article";';
             echo 'var img = document.createElement("img");';
             echo 'img.classList = "image";';
@@ -113,6 +116,7 @@ if (count($results) > 0) {
             echo 'card.appendChild(email);';
             echo 'card.appendChild(contenar_comant_lik);';
             echo 'card.appendChild(cc);';
+            echo 'card.appendChild(id_de_article);';
             echo 'var card_Recent_articles = document.querySelector(".card_Recent_articles");';
             echo 'card_Recent_articles.appendChild(card);';
             echo '</script>';

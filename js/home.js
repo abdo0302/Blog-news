@@ -154,9 +154,12 @@ let conten=document.querySelectorAll('.conten')
 let comants=document.querySelectorAll('.comants')
 console.log(comants[0].innerHTML);
 let ccomants=document.querySelector('.ccomants')
+let id_article=document.querySelector('.id_article')
+let id_de_articles=document.querySelectorAll('.idd')
 
 article.forEach((e,i)=>{
     e.addEventListener('click',()=>{
+        id_article.value=id_de_articles[i].textContent
         ccomants.innerHTML=comants[i].innerHTML
         image_article.src=image[i].src
         tetle_article.textContent=tetle_articls[i].textContent

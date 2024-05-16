@@ -220,9 +220,10 @@ if (session_status() == PHP_SESSION_NONE) {
                 uiluy
             </div>
             <div class="continar_form">
-                <form action="">
-                    <input type="text" class="input_text_comant">
-                    <input type="submit" class="button_submit_comant">
+                <form action="index.php" method="POST" >
+                    <input type="text" class="id_article" name="id_article">
+                    <input type="text" name="input_text_comant" class="input_text_comant">
+                    <input type="submit" name="button_submit_comant" class="button_submit_comant">
                 </form>
             </div>
         </div>
@@ -336,6 +337,14 @@ if (count($results) == 0) {
 }
 }
   
+//submit comant
+if(isset($_POST["button_submit_comant"]) && isset($_SESSION['nom'])){
+    $comant=$_POST["input_text_comant"];
+    $id_article=$_POST["id_article"];
+    $sql = 'INSERT INTO Commentaires (contenu, auteur_id,article_id)
+    VALUES ("'.$comant.'", '.$_SESSION["id"].','.$id_article.')';
+    $conn->exec($sql);
+}
 ?>
 <script src="./js/home.js"></script>
 </body>
