@@ -282,8 +282,14 @@ aside ul{
   color: #181818;
 }
 
-.articles{
-  display: grid;
-  grid-template-columns: 3 1fr;
-  background-color: red;
+.card_Business ,
+ .card_News_and_events 
+ ,.card_Recent_articles,
+ .card_Science_Tech,
+ .card_Specialized_categories,
+ .card_artecle_sport{
+
+  width: 100%;
+  display: flex;
+  gap: 8px;
 }

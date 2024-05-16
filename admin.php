@@ -137,11 +137,17 @@
                 </div>
             </div>
              <div class="articles">
+                <div><h1>Business</h1></div>
              <div class="card_Business"></div>
+             <div><h1>News and events</h1></div>
              <div class="card_News_and_events"></div>
+             <div><h1>Recent articles</h1></div>
              <div class="card_Recent_articles"></div>
+             <div><h1>Science Tech</h1></div>
              <div class="card_Science_Tech"></div>
+             <div><h1>Specialized categories</h1></div>
              <div class="card_Specialized_categories"></div>
+             <div><h1>artecle sport</h1></div>
              <div class="card_artecle_sport"></div>
             </div>
         </section>
