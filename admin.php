@@ -136,12 +136,14 @@
                     </div>
                 </div>
             </div>
-            <div class="card_Business">artices</div>
-            <div class="card_News_and_events">artices</div>
-            <div class="card_Recent_articles">artices</div>
-            <div class="card_Science_Tech">artices</div>
-            <div class="card_Specialized_categories">artices</div>
-            <div class="card_artecle_sport">artices</div>
+             <div class="articles">
+             <div class="card_Business"></div>
+             <div class="card_News_and_events"></div>
+             <div class="card_Recent_articles"></div>
+             <div class="card_Science_Tech"></div>
+             <div class="card_Specialized_categories"></div>
+             <div class="card_artecle_sport"></div>
+            </div>
         </section>
     </main>
     <?php 
@@ -152,7 +154,7 @@
     } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
     }
-    
+
     include './php/section_sport.php';
     include './php/section_Science_Tech.php';
     include './php/section_Business.php';
