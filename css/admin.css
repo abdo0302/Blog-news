@@ -106,6 +106,12 @@ aside ul{
   object-fit: cover;
 }
 
+.articles{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* =============== Navigation ================ */
 .navigation {
   position: fixed;

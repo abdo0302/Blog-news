@@ -7,7 +7,7 @@
     <!--logo de page-->
     <link rel="icon" href="./img/logo.png">
     <link rel="stylesheet" href="./css/admin.css">
-</head>
+	</head>
 <body>
 <main > 
         <aside >
@@ -33,7 +33,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="users.php">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
@@ -49,16 +49,6 @@
                         <span class="title">Articles</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="help-outline"></ion-icon>
-                        </span>
-                        <span class="title">Admins</span>
-                    </a>
-                </li>
-
                 <li>
                     <a href="#">
                         <span class="icon">
@@ -67,18 +57,8 @@
                         <span class="title">My profile</span>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Password</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
+                    <a href="blogphp/php/log_out.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -155,8 +135,25 @@
                     </div>
                 </div>
             </div>
+            <div class="card">artices</div>
         </section>
     </main>
+    <?php 
+    try {
+        include './php/connect.php';
+        include './php/sign_up.php';
+        include './php/sign_in.php';
+    } catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+    }
+    
+    include './php/section_sport.php';
+    include './php/section_Science_Tech.php';
+    include './php/section_Business.php';
+    include './php/section_Recent_articles.php';
+    include './php/section_Specialized_categories.php';
+    include './php/section_News_and_events.php';
+    ?>
     <script src="./js/admin.js"></script>
 </body>
 </html>
