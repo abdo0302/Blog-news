@@ -106,7 +106,7 @@ if (count($results) > 0) {
             echo 'span1.textContent="'.$nomber_Article_business.'";';
             echo 'span2.textContent="'.$nomber_comant.'";';
             echo 'i1.classList = "fa-solid fa-heart";';
-            echo 'i2.classList = "fa-solid fa-comment";';
+            echo 'i2.classList = "fa-solid fa-comment comanttt";';
             echo 'contenar_comant_lik.classList = "contenar_comant_lik";';
             echo 'div.appendChild(span);';
             echo 'div.classList = "div1";'; 
