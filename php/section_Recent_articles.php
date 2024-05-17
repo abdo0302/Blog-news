@@ -76,7 +76,7 @@ if (count($results) > 0) {
             echo 'id_de_article.textContent="'.$id_Article_section_Recent.'";';
             echo 'card.classList = "card article";';
             echo 'var img = document.createElement("img");';
-            echo 'img.classList = "image";';
+            echo 'img.classList = "image image_articles";';
             echo 'img.src = "img/'.$image_Article_section_Recent.'";';
             echo 'var div = document.createElement("div");';
             echo 'var span = document.createElement("span");';

@@ -322,6 +322,7 @@ aside {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+
 }
 .articles{
   justify-content: center;
@@ -348,4 +349,117 @@ aside {
 }
 .button_articls:hover{
   background-color: #C4C4C4;
+}
+
+/*section show article*/
+.contenar_show_article{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  z-index: 12;
+  display: none;
+
+}
+.contenar_show_article .contenar_article{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  padding: 30px;
+}
+.contenar_show_article div h2{
+  text-align: center;
+  margin-bottom: 15px;
+}
+.contenar_show_article div p{
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.contenar_show_article div span{
+  font-size: 20px;
+}
+.contenar_show_article div img{
+  max-width: 600px;
+  min-height: 200px;
+  margin-bottom: 10px;
+  border: 2px solid rgb(219, 218, 218);
+  box-shadow: 2px 2px 8px rgb(212, 211, 211);
+}
+.conten{
+  display: none;
+  color: #181818;
+}
+.contenar_Commentaires{
+  width: 30%;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start !important;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 2px 2px 8px rgb(173, 173, 173);
+
+}
+.contenar_Commentaires .contenar_article{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  color: #1035db;
+  font-weight: 700;
+}
+.contenar_Commentaires h4{
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+.contenar_Commentaires h4 span{
+font-size: 16px;
+}
+.continar_form{
+  
+  width: 100%;
+  justify-content: center;
+}
+.continar_form form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input_text_comant{
+  width: 90%;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 10px;
+  border: 3px solid rgb(148, 145, 145);
+  background-color: #eeeded;
+}
+.button_submit_comant{
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  padding: 5px;
+  background-color: #eeeded;
+}
+.button_submit_comant:hover{
+  background-color: #b4b4b4;
+}
+.ccomants{
+  height: 400px;
+  overflow-y: auto;
+}
+.comants{
+  display: none;
+}
+.id_article{
+  width: 0px;
+  background-color: white;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.id_de_article{
+  display: none;
 }

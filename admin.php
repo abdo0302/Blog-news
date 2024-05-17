@@ -16,6 +16,7 @@ if (!isset($_SESSION['id'])) {
     <title>Blog news</title>
     <!--logo de page-->
     <link rel="icon" href="./img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/admin.css">
@@ -135,12 +136,35 @@ if (!isset($_SESSION['id'])) {
           </div>
     </section>
 
-        </section>
+ </section>
 
 <div class="utilisateurs" >
 
 </div>
 
+    <!--============={{section show article start}}=============-->
+    <section class="contenar_show_article">
+        <div class="contenar_article">
+            <h2 class="tetle_article"></h2>
+            <img src="" alt="" class="image_article">
+            <p class="contnu_article"></p>
+            <span ><span>date de creation: </span> <span class="dat"></span></span>
+        </div>
+        <div class="contenar_Commentaires">
+            <span class="contenar_article">Commentaires</span>
+            <div class="ccomants">
+                uiluy
+            </div>
+            <div class="continar_form">
+                <form action="index.php" method="POST" >
+                    <input type="text" class="id_article" name="id_article">
+                    <input type="text" name="input_text_comant" class="input_text_comant">
+                    <input type="submit" name="button_submit_comant" class="button_submit_comant">
+                </form>
+            </div>
+        </div>
+    </section>
+    <!--============={{section show article end}}=============-->
 
     <?php 
     try {
@@ -169,7 +193,7 @@ if (!isset($_SESSION['id'])) {
      
      ?>
     <script>
-        
+        let contenar_show_article=document.querySelector('.contenar_show_article')
         let contenar_utilisateurs=document.querySelector('.utilisateurs')
         let coontenar_articles=document.querySelector('.articless')
         let button_users=document.querySelector('.button_users')
@@ -179,13 +203,49 @@ if (!isset($_SESSION['id'])) {
         button_users.onclick=()=>{
             contenar_utilisateurs.style.display='flex'
             coontenar_articles.style.display='none'
-            
+            contenar_show_article.style.display='none'
         }
         button_articls.onclick=()=>{
             contenar_utilisateurs.style.display='none'
             coontenar_articles.style.display='flex'
+            contenar_show_article.style.display='none'
             console.log(coontenar_articles);
           }
+
+          //section show article
+let article=document.querySelectorAll('.article')
+let tetle_article=document.querySelector('.tetle_article')
+let image_article=document.querySelector('.image_article')
+let dat=document.querySelector('.dat')
+let contnu_article=document.querySelector('.contnu_article')
+let image=document.querySelectorAll('.image_articles')
+let tetle_articls=document.querySelectorAll('.tetle_articls')
+let dats=document.querySelectorAll('.dats')
+let conten=document.querySelectorAll('.conten')
+
+let comants=document.querySelectorAll('.comants')
+console.log(comants[0].innerHTML);
+let ccomants=document.querySelector('.ccomants')
+let id_article=document.querySelector('.id_article')
+let id_de_articles=document.querySelectorAll('.idd')
+
+console.log(contenar_show_article)
+article.forEach((e,i)=>{
+    e.addEventListener('click',()=>{
+        id_article.value=id_de_articles[i].textContent
+        ccomants.innerHTML=comants[i].innerHTML
+        image_article.src=image[i].src
+        tetle_article.textContent=tetle_articls[i].textContent
+        dat.textContent=dats[i].textContent
+        contnu_article.textContent=conten[i].textContent
+
+        coontenar_articles.style.display='none'
+        contenar_utilisateurs.style.display='none'
+        contenar_show_article.style.display='flex'
+    })
+})
+
+
     </script> 
 </body>
 </html>
