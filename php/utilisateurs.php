@@ -18,8 +18,8 @@ $selects = $conn->query("SELECT * FROM utilisateurs WHERE est_admin=0");
                 echo '<script type="text/javascript">';
                 echo 'var card = document.createElement("div");';
                 echo 'card.classList = "card";';
-                echo 'var img = document.createElement("img");';
-                echo 'img.src = "img/'.$image_authors.'";';
+                echo 'var img = document.createElement("img");'; //
+                echo 'img.src = "img/'.$image_authors.'";'; //
                 echo 'var div = document.createElement("div");';
                 echo 'var span = document.createElement("span");';
                 echo 'var email = document.createElement("span");';
@@ -28,7 +28,7 @@ $selects = $conn->query("SELECT * FROM utilisateurs WHERE est_admin=0");
                 echo 'span.textContent="'.$nom_authors.'";';
                 echo 'div.appendChild(span);';
                 echo 'div.classList = "div1";'; 
-                echo 'card.appendChild(img);';
+                echo 'card.appendChild(img);'; //
                 echo 'card.appendChild(div);';
                 echo 'card.appendChild(email);';
                 echo 'var utilisateurs = document.querySelector(".utilisateurs");';

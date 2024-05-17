@@ -324,7 +324,7 @@ aside {
   flex-wrap: wrap;
 }
 .articles{
-  display: none;
+  display: flex;
   justify-content: center;
   position: sticky;
 }
