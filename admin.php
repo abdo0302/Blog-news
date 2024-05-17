@@ -21,27 +21,27 @@ if (!isset($_SESSION['id'])) {
     <link rel="stylesheet" href="./css/admin.css">
 	</head>
 <body>
-<main >
-    
- <!-- ========================= Aside ==================== -->
 
- <aside class="">
+<?php 
+    include_once("data/users.php");
+    include_once("php/connect.php");
+    $users = getAll($conn);
+    print_r($users);
+?>
+
+<!-- ========================= Aside ==================== -->
+
+<aside class="">
     <div class="logo">BLOG News</div>
     <div class="photo_de_profl"><img src="img/<?php echo $_SESSION['image']?>" class="image" alt=""></div>
     <div class="info">
         <span class="Name"><?php echo $_SESSION['nom']; ?></span>
         <span class="email"><?php echo $_SESSION['email']; ?></span>
     </div>
+<div class="buttons">
+    <a href="#" class="button_users">Users</a>
+    <a href="#" class="button_articls">Articles</a>
 
-    <div class="button_role">
-        <form id="myForm" action="index.php" method="POST">
-            <div><input type="button" value="Users" class="log_out" onclick="showUsers()"></div>
-            <div><input type="button" value="Articles" class="log_out" onclick="showArticles()"></div>
-        </form>
-        <button class="log_out" type="button">
-            <a href="index.php">Home</a>
-        </button>
-    </div>
 
     <div class="button">
         <form action="index.php" method="POST">
@@ -49,82 +49,23 @@ if (!isset($_SESSION['id'])) {
         </form>
     </div>
 </aside>
+<header>
+    <!-- ========================= Topbar ==================== -->
 
-<section>
-    <div class="articles" style="display: none;">
-        <!-- Articles content here -->
-        <h2>Articles Section</h2>
-    </div>
-    <div class="users" style="display: none;">
-        <!-- Users content here -->
-        <h2>Users Section</h2>
-    </div>
-</section>
- 
-<!-- ========================= Topbar ==================== -->
-
-        <section >
-
-             <div class="main">
+<div class="main">
             <div class="topbar">
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
-
-
                 <div class="user">
                     <img src="img/55.jpg" alt="">
                 </div>
             </div>
+</header>
+<main >
 
-            <!-- ======================= Cards ================== -->
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">1,504</div>
-                        <div class="cardName">Users</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Articles</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">284</div>
-                        <div class="cardName">Comments</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">7,842</div>
-                        <div class="cardName">Likes</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
-                    </div>
-                </div>
-            </div>
-
-    <section class="articles">
+<section >
+    <section class="articless">
           <div>
              <div><h1>Business</h1></div>
              <div class="card_Business"></div>
@@ -140,12 +81,43 @@ if (!isset($_SESSION['id'])) {
              <div class="card_artecle_sport"></div>
           </div>
     </section>
+</section>
 
-        </section>
-
+<section class="section-2">
 <div class="utilisateurs" >
+<div class="main-table">   
+    <h3 class="mb-3">All users <a href="" class="btn btn-success">Add user</a></h3>  
+    <?php if ($users != 0): ?>
+    <table class="table t1 table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $kuser): ?>
+                <tr>
+                    <th scope="row"><?php echo $kuser['id']; ?></th>
+                    <td><?php echo $kuser['nom']; ?></td>
+                    <td><?php echo $kuser['email']; ?></td>
+                    <td>
+                        <a href="" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php else: ?>
+    <div class="alert alert-info">empty!</div>
+<?php endif; ?>
+
 
 </div>
+</div>
+<section>
 
 
     <?php 
@@ -167,13 +139,31 @@ if (!isset($_SESSION['id'])) {
 
 
 
-    <script src="./js/admin.js"></script>
-    <script src="./js/nav.js"></script>
+    
     </main> 
     <?php
         
-    include './php/utilisateurs.php';
+    //include './php/utilisateurs.php';
      
      ?>
+    <script>
+        
+        let contenar_utilisateurs=document.querySelector('.utilisateurs')
+        let coontenar_articles=document.querySelector('.articless')
+        let button_users=document.querySelector('.button_users')
+        let button_articls=document.querySelector('.button_articls')
+        coontenar_articles.style.display='none'
+        
+        button_users.onclick=()=>{
+            contenar_utilisateurs.style.display='flex'
+            coontenar_articles.style.display='none'
+            
+        }
+        button_articls.onclick=()=>{
+            contenar_utilisateurs.style.display='none'
+            coontenar_articles.style.display='flex'
+            console.log(coontenar_articles);
+          }
+    </script> 
 </body>
 </html>

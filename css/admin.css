@@ -11,8 +11,9 @@
 
 main {
   margin-left: 20vw;
+  margin-top: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 /* side bar */
@@ -74,10 +75,14 @@ aside {
   padding-top: 50px;
 }
 
-/*  */
+/* header */
 
+header{
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+}
 
-/* ===================== Main ===================== */
 .main {
   position: absolute;
   width: calc(100% - 300px);
@@ -129,6 +134,9 @@ aside {
   height: 100%;
   object-fit: cover;
 }
+
+/* ===================== Main ===================== */
+
 
 .articles{
   display: flex;
@@ -211,123 +219,42 @@ aside {
 }
 
 
-/* ======================= Cards ====================== */
-.cardBox {
-  position: relative;
-  width: 100%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
-}
-
-.cardBox .card {
-  position: relative;
-  background: var(--white);
-  padding: 30px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-}
-
-.cardBox .card .numbers {
-  position: relative;
-  font-weight: 500;
-  font-size: 2.5rem;
-  color: var(--blue);
-}
-
-.cardBox .card .cardName {
-  color: var(--black2);
-  font-size: 1.1rem;
-  margin-top: 5px;
-}
-
-.cardBox .card .iconBx {
-  font-size: 3.5rem;
-  color: var(--black2);
-}
-
-.cardBox .card:hover {
-  background: var(--blue);
-}
-.cardBox .card:hover .numbers,
-.cardBox .card:hover .cardName,
-.cardBox .card:hover .iconBx {
-  color: var(--white);
-}
-
-
-.comants{
+.articles{
   display: none;
+  justify-content: center;
+  position: sticky;
 }
 .card{
-  width: 319px;
-  padding: 25px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  background-color: #C4C4C4;
+  position: sticky;
+}
+.buttons{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.card img{
-  border-radius: 9px;
-  width: 269px;
-  height: 188px;
+.button_users,.button_articls{
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    padding: 5px;
+    border-radius: 5px;
 }
-.div1{
-  margin-top: 15px;
-  margin-bottom: 8px;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
+.button_users:hover{
+  background-color: #C4C4C4;
 }
-.tetle{
-  font-weight: 600;
-  font-size: 18px;
-  width: 90%;
-}
-.button_read_more{
-  margin-top: 20px;
-  margin-right: auto;
-  font-weight: 800;
-}
-.email{
-  font-weight: 600;
-  font-size: 18px;
-  width: 90%;
-}
-.conten{
-  display: none;
-  color: #181818;
+.button_articls:hover{
+  background-color: #C4C4C4;
 }
 
-.card_Business ,
- .card_News_and_events 
- ,.card_Recent_articles,
- .card_Science_Tech,
- .card_Specialized_categories,
- .card_artecle_sport{
 
-  width: 100%;
-  display: flex;
-  gap: 8px;
+/* ===================== table ===================== */
+
+.section-2{
+  padding-left: 15px;
 }
-.utilisateurs{
-  background-color: aqua;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.articles{
-  display: flex;
-  justify-content: center;
-  position: sticky;
-}
-.card{
-  position: sticky;
+
+.main-table .t1{
+ width: 90%;
+ max-width: 700px;
 }
