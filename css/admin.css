@@ -317,3 +317,17 @@ aside {
   display: flex;
   gap: 8px;
 }
+.utilisateurs{
+  background-color: aqua;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.articles{
+  display: none;
+  justify-content: center;
+  position: sticky;
+}
+.card{
+  position: sticky;
+}

@@ -124,7 +124,7 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
 
-    <section class="">
+    <section class="articles">
           <div>
              <div><h1>Business</h1></div>
              <div class="card_Business"></div>
@@ -143,7 +143,11 @@ if (!isset($_SESSION['id'])) {
 
         </section>
 
-<div class="articles">
+<div class="utilisateurs" >
+
+</div>
+
+
     <?php 
     try {
         include './php/connect.php';
@@ -160,29 +164,16 @@ if (!isset($_SESSION['id'])) {
     include './php/section_Specialized_categories.php';
     include './php/section_News_and_events.php';
     ?>
- </div>
 
-<div class="utilisateurs">
-<table class="table ">
-            <thead class="table">
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Date of Create</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                include './php/utilisateur.php';
-                ?>
-            </tbody>
-        </table>
-    </div>
+
 
     <script src="./js/admin.js"></script>
     <script src="./js/nav.js"></script>
-    </main>
+    </main> 
+    <?php
+        
+    include './php/utilisateurs.php';
+     
+     ?>
 </body>
 </html>
