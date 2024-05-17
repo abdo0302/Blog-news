@@ -324,10 +324,28 @@ aside {
   flex-wrap: wrap;
 }
 .articles{
-  display: none;
   justify-content: center;
   position: sticky;
 }
 .card{
   position: sticky;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button_users,.button_articls{
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.button_users:hover{
+  background-color: #C4C4C4;
+}
+.button_articls:hover{
+  background-color: #C4C4C4;
 }

@@ -32,16 +32,10 @@ if (!isset($_SESSION['id'])) {
         <span class="Name"><?php echo $_SESSION['nom']; ?></span>
         <span class="email"><?php echo $_SESSION['email']; ?></span>
     </div>
+<div class="buttons">
+    <a href="#" class="button_users">Users</a>
+    <a href="#" class="button_articls">Articles</a>
 
-    <div class="button_role">
-        <form id="myForm" action="index.php" method="POST">
-            <div><input type="button" value="Users" class="log_out" onclick="showUsers()"></div>
-            <div><input type="button" value="Articles" class="log_out" onclick="showArticles()"></div>
-        </form>
-        <button class="log_out" type="button">
-            <a href="index.php">Home</a>
-        </button>
-    </div>
 
     <div class="button">
         <form action="index.php" method="POST">
@@ -124,7 +118,7 @@ if (!isset($_SESSION['id'])) {
                 </div>
             </div>
 
-    <section class="articles">
+    <section class="articless">
           <div>
              <div><h1>Business</h1></div>
              <div class="card_Business"></div>
@@ -167,13 +161,31 @@ if (!isset($_SESSION['id'])) {
 
 
 
-    <script src="./js/admin.js"></script>
-    <script src="./js/nav.js"></script>
+    
     </main> 
     <?php
         
     include './php/utilisateurs.php';
      
      ?>
+    <script>
+        
+        let contenar_utilisateurs=document.querySelector('.utilisateurs')
+        let coontenar_articles=document.querySelector('.articless')
+        let button_users=document.querySelector('.button_users')
+        let button_articls=document.querySelector('.button_articls')
+        coontenar_articles.style.display='none'
+        
+        button_users.onclick=()=>{
+            contenar_utilisateurs.style.display='flex'
+            coontenar_articles.style.display='none'
+            
+        }
+        button_articls.onclick=()=>{
+            contenar_utilisateurs.style.display='none'
+            coontenar_articles.style.display='flex'
+            console.log(coontenar_articles);
+          }
+    </script> 
 </body>
 </html>
