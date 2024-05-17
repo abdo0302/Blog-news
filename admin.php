@@ -247,5 +247,16 @@ article.forEach((e,i)=>{
 
 
     </script> 
+    <?php 
+     //submit comant
+    if(isset($_POST["button_submit_comant"]) && isset($_SESSION['nom'])){
+        $comant=$_POST["input_text_comant"];
+        $id_article=$_POST["id_article"];
+        $sql = 'INSERT INTO Commentaires (contenu, auteur_id,article_id)
+        VALUES ("'.$comant.'", '.$_SESSION["id"].','.$id_article.')';
+        $conn->exec($sql);
+}
+    
+    ?>
 </body>
 </html>
