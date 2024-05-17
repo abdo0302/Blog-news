@@ -1,3 +1,13 @@
+<?php
+session_start(); 
+
+if (!isset($_SESSION['id'])) {
+    // Redirect to login page if user is not logged in
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,78 +16,55 @@
     <title>Blog news</title>
     <!--logo de page-->
     <link rel="icon" href="./img/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/admin.css">
 	</head>
 <body>
-<main > 
-        <aside >
-        <div class="container">
-        <div class="navigation">
-            <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="logo-apple"></ion-icon>
-                        </span>
-                        <span class="title">BLOG News</span>
-                    </a>
-                </li>
+<main >
+    
+ <!-- ========================= Aside ==================== -->
 
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
+ <aside class="">
+    <div class="logo">BLOG News</div>
+    <div class="photo_de_profl"><img src="img/<?php echo $_SESSION['image']?>" class="image" alt=""></div>
+    <div class="info">
+        <span class="Name"><?php echo $_SESSION['nom']; ?></span>
+        <span class="email"><?php echo $_SESSION['email']; ?></span>
+    </div>
 
-                <li>
-                    <a href="users.php">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Users</span>
-                    </a>
-                </li>
+    <div class="button_role">
+        <form id="myForm" action="index.php" method="POST">
+            <div><input type="button" value="Users" class="log_out" onclick="showUsers()"></div>
+            <div><input type="button" value="Articles" class="log_out" onclick="showArticles()"></div>
+        </form>
+        <button class="log_out" type="button">
+            <a href="index.php">Home</a>
+        </button>
+    </div>
 
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                        </span>
-                        <span class="title">Articles</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">My profile</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="blogphp/php/log_out.php">
-                        <span class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
-                        </span>
-                        <span class="title">Sign Out</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-            <div class ="photo_de_profl"></div>
-            <div class ="info">
-                <span class ="nom">Admin</span>
-                <span class ="emai">Admin@blocknews.com</span>
-            </div>
+    <div class="button">
+        <form action="index.php" method="POST">
+            <input type="submit" value="Log out" name="log_out" class="log_out">
+        </form>
+    </div>
+</aside>
 
-        </aside>
+<section>
+    <div class="articles" style="display: none;">
+        <!-- Articles content here -->
+        <h2>Articles Section</h2>
+    </div>
+    <div class="users" style="display: none;">
+        <!-- Users content here -->
+        <h2>Users Section</h2>
+    </div>
+</section>
+ 
+<!-- ========================= Topbar ==================== -->
+
         <section >
 
-             <!-- ========================= Topbar ==================== -->
              <div class="main">
             <div class="topbar">
                 <div class="toggle">
@@ -136,8 +123,10 @@
                     </div>
                 </div>
             </div>
-             <div class="articles">
-                <div><h1>Business</h1></div>
+
+    <section class="">
+          <div>
+             <div><h1>Business</h1></div>
              <div class="card_Business"></div>
              <div><h1>News and events</h1></div>
              <div class="card_News_and_events"></div>
@@ -147,11 +136,14 @@
              <div class="card_Science_Tech"></div>
              <div><h1>Specialized categories</h1></div>
              <div class="card_Specialized_categories"></div>
-             <div><h1>artecle sport</h1></div>
+             <div><h1>article sport</h1></div>
              <div class="card_artecle_sport"></div>
-            </div>
+          </div>
+    </section>
+
         </section>
-    </main>
+
+<div class="articles">
     <?php 
     try {
         include './php/connect.php';
@@ -168,6 +160,29 @@
     include './php/section_Specialized_categories.php';
     include './php/section_News_and_events.php';
     ?>
+ </div>
+
+<div class="utilisateurs">
+<table class="table ">
+            <thead class="table">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Date of Create</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include './php/utilisateur.php';
+                ?>
+            </tbody>
+        </table>
+    </div>
+
     <script src="./js/admin.js"></script>
+    <script src="./js/nav.js"></script>
+    </main>
 </body>
 </html>

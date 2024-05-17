@@ -10,11 +10,13 @@
 }
 
 main {
+  margin-left: 20vw;
   display: flex;
   flex-direction: row;
 }
 
 /* side bar */
+
 aside {
   display: flex;
   flex-direction: column;
@@ -28,28 +30,50 @@ aside {
   background-color: #000;
   color: white;
 }
-
-
-
+.image {
+  width:100px;
+  height:100px;
+  border-radius: 50px;
+}
+.logo {
+  padding-top: 30px;
+}
+.photo_de_profl {
+  width: 100px;
+  height:100px;
+}
 .info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 20px;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
-aside ul{
-    color: #E0E4EA;
-    gap: 10px;
+.log_out{
+  width: 100%;
+  padding: 10px;
+  background-color:  #000;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.log_out:hover {
+  background-color: gray ;
 }
 
 /*  button home and logout */
+
 .button {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-top: 100px;
+  padding-top: 50px;
 }
+
 /*  */
 
 
