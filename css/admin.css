@@ -219,76 +219,6 @@ header{
 }
 
 
-<<<<<<< HEAD
-=======
-/* ======================= Cards ====================== */
-.cardBox {
-  position: relative;
-  width: 100%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
-}
-
-.cardBox .card {
-  position: relative;
-  background: var(--white);
-  padding: 30px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-}
-
-.cardBox .card .numbers {
-  position: relative;
-  font-weight: 500;
-  font-size: 2.5rem;
-  color: var(--blue);
-}
-
-.cardBox .card .cardName {
-  color: var(--black2);
-  font-size: 1.1rem;
-  margin-top: 5px;
-}
-
-.cardBox .card .iconBx {
-  font-size: 3.5rem;
-  color: var(--black2);
-}
-
-.cardBox .card:hover {
-  background: var(--blue);
-}
-.cardBox .card:hover .numbers,
-.cardBox .card:hover .cardName,
-.cardBox .card:hover .iconBx {
-  color: var(--white);
-}
-
-
-.comants{
-  display: none;
-}
-.card{
-  width: 319px;
-  padding: 25px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  background-color: #C4C4C4;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.card img{
-  border-radius: 9px;
-  width: 269px;
-  height: 188px;
-}
 .div1{
   margin-top: 15px;
   margin-bottom: 8px;
@@ -328,13 +258,11 @@ header{
   gap: 8px;
 }
 .utilisateurs{
-  background-color: aqua;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-
 }
->>>>>>> f8da873b5abb458442830d0b14541fc3bdba3c43
+
 .articles{
   display: none;
   justify-content: center;
@@ -363,19 +291,6 @@ header{
   background-color: #C4C4C4;
 }
 
-<<<<<<< HEAD
-
-/* ===================== table ===================== */
-
-.section-2{
-  padding-left: 15px;
-}
-
-.main-table .t1{
- width: 90%;
- max-width: 700px;
-}
-=======
 /*section show article*/
 .contenar_show_article{
   width: 100%;
@@ -488,4 +403,3 @@ font-size: 16px;
 .id_de_article{
   display: none;
 }
->>>>>>> f8da873b5abb458442830d0b14541fc3bdba3c43

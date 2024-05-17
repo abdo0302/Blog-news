@@ -26,7 +26,6 @@ if (!isset($_SESSION['id'])) {
     include_once("data/users.php");
     include_once("php/connect.php");
     $users = getAll($conn);
-    print_r($users);
 ?>
 
 <!-- ========================= Aside ==================== -->
@@ -86,7 +85,7 @@ if (!isset($_SESSION['id'])) {
 <section class="section-2">
 <div class="utilisateurs" >
 <div class="main-table">   
-    <h3 class="mb-3">All users <a href="" class="btn btn-success">Add user</a></h3>  
+    <h3 class="mb-3">All users <a href="../sign_up.php" class="btn btn-success">Add user</a></h3>  
     <?php if ($users != 0): ?>
     <table class="table t1 table-bordered">
         <thead>
